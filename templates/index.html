@@ -1,0 +1,354 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>learn ai </title>
+    <link rel="stylesheet" type="text/css" href="{%  static "css/style.css" %}">
+</head>
+
+<body>
+
+<div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+        <h1><a href="https://learnai.co.in/"
+               rel="dofollow" style="font-family: serif; ">LEARN AI</a></h1>
+    </div>
+    <div class="formbg-outer">
+        <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+                <span class="padding-bottom--15" style="color: mediumvioletred;">Register Here:</span>
+                <form id="stripe-login" method="post">
+                    {% csrf_token %}
+                    <div class="field padding-bottom--24">
+                        <label for="text">Name:</label>
+                        <input type="text" name="text">
+                    </div>
+                    <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label for="email">Email:</label>
+                        </div>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label for="tel">Phone number:</label>
+                        </div>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{1}[0-9]{9}">
+                    </div>
+
+                    <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label for="tel">Whatsup number:</label>
+                        </div>
+                        <input type="tel" id="phone" name="whatsup" pattern="[0-9]{1}[0-9]{9}">
+                    </div>
+
+
+                    <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label for="text">Occupation:</label>
+                        </div>
+                        <select name="occupation" class="form-control selectpicker abc" >
+                            <option value="" disabled selected>Select Options</option>
+                            <option value="Student">Student</option>
+                            <option value="Graduated">Graduated</option>
+                            <option value="Job">Job</option>
+                        </select>
+                    </div>
+
+                    <div class="field padding-bottom--24">
+                        <div class="grid--50-50">
+                            <label for="text">Looking For:</label>
+                        </div>
+                        <select name="Looking" id="cboOptions" onchange="showDiv('div',this)" class="form-control abc">
+                            <option value="1" disabled selected>select options</option>
+                            <option value="1">Training</option>
+                            <option value="2">Projects</option>
+                            <option value="3">Internship</option> 
+                            <option value="4">Job Support</option>
+                            <option value="5">Visa Processing</option>
+                            <option value="6">Job Assitance</option>
+                        </select>&nbsp;
+
+
+                        <div id="div1" style="display:none;">
+                            <label>Mode of Class:</label>
+                            <select name="department1" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Select Mode</option>
+                                <option>Inclass</option>
+                                <option>Online</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Courses:</label>
+                            <select name="department2" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Select Courses</option>
+                                <option>Data Science</option>
+                                <option>Machine Learning</option>
+                                <option>Data Analyst</option>
+                                <option>Artificial Intelligence(AI)</option>
+                                <option>NLP</option>
+                                <option>Deep Learning</option>
+                                <option>Business Intelligence</option>
+                                <option>Web Development</option>
+                                <option>Python</option>
+                                <option>Full Stack Python</option>
+                                <option>Java</option>
+                                <option>Full Stack Java</option>
+                                <option>Django</option>
+                                <option>React JS</option>
+                                <option>Power BI</option>
+                                <option>Tableau</option>
+                                <option>Basic Computers</option>
+                                <option>SAP</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Joining Time:</label>
+                            <select name="department3" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Select Joining</option>
+                                <option value="Immediate Joining">Immediate Joining</option>
+                                <option value="Later">Later</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Weeks:</label>
+                            <select name="department4" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Select Week</option>
+                                <option>Weekday</option>
+                                <option>weekend</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Timing:</label>
+                            <select name="department5" class="form-control selectpicker abc" >
+                                <option value="" disabled selected> Select Timing</option>
+                                <option>Morning</option>
+                                <option>Afternoon</option>
+                                <option>Evening</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            <textarea type="text" name="department6" placeholder="Any New Courses" rows="5" cols="55"></textarea>
+                            
+                        </div>
+
+                        <div id="div2" style="display:none;">
+                            <label>Education</label>
+                            <select name="project" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Education</option>
+                                <option>B-Tech</option>
+                                <option>M-Tech</option>
+                                <option>Masters</option>
+                                <option>PhD</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Type of Projects</label>
+                            <select name="type1" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>TYpe of Project</option>
+                                <option>IEEE</option>
+                                <option>Select From List</option>
+                                <option>Customize</option>
+                
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Student projects</label>
+                            <select name="projects" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Student projects</option>
+                                <option>Mini</option>
+                                <option>Major</option>
+                                <option>Assignments</option>
+                                
+                            </select>
+
+                            <br>
+                            <br>
+
+                            
+                            <textarea type="text" name="student" placeholder="Brief Explanation about Your Project" rows="5" cols="55"></textarea>
+                        </div>
+
+                        <div id="div3" style="display:none;">
+                            <label>Type of Internship:</label>
+                            <select name="intern1" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Internship Options</option>
+                                <option>Acadamic</option>
+                                <option>Summer</option>
+                                <option>Course Internship</option>
+                                <option>Inhouse</option>
+                                <option>Client</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Time Period:</label>
+                            <select name="internship" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Internship option</option>
+                                <option>15 Days</option>
+                                <option>1 Month</option>
+                                <option>2 Months</option>
+                                <option>3 Months</option>
+                                <option>4 Months</option>
+                                <option>5 Months</option>
+                                <option>6 Months</label>
+                                <option>1 Year</label>
+                            </select>
+
+                            <br>
+                            <br>
+                            
+
+                            
+                            <textarea type="text" name="time" placeholder="For Additional Information" rows="5" cols="55"></textarea>
+            
+                        </div>
+                        
+
+                        <div id="div4" style="display:none;">
+                            <label>Job Support:</label>
+                            <select name="job" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Job Support option</option>
+                                <option>Data Science</option>
+                                <option>NLP</option>
+                                <option>Deep Learning</option>
+                                <option>AI</option>
+                                <option>SAP</option>
+                                <option>PowerBI</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            
+                            <textarea type="text" name="job1" placeholder="For Additional Information" rows="5" cols="55"></textarea>
+            
+                        </div>
+
+                        
+                        <div id="div5" style="display:none;">
+                            <label>Visa Processing:</label>
+                            <select name="visa" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Visa Process Options</option>
+                                <option>Student</option>
+                                <option>Job</option>
+                                <option>PR</option>
+                                <option>Business Visa</option>
+                            </select>
+
+                            <br>
+                            <br>
+                            <label>Country:</label>
+                            <select name="visa1" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Visa Process Options</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                                <option>Canada</option>
+                                <option>AUstralia</option>
+                                <option>Euro</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            
+                            <textarea type="text" name="country" placeholder="Enter your student" rows="5" cols="55"></textarea>
+
+            
+                        </div>
+                        
+                        <div id="div6" style="display:none;">
+                            <label>Job Assitance:</label>
+                            <select name="job_assi" class="form-control selectpicker abc" >
+                                <option value="" disabled selected>Job Assitance</option>
+                                <option>Data Analyst</option>
+                                <option>Data Scientist</option>
+                                <option>ML Engineer</option>
+                                <option>PowerBI</option>
+                                <option>Web Developer</option>
+                                <option>Full Stack Web Developer</option>
+                                <option>SAP</option>
+                            </select>
+
+                            <br>
+                            <br>
+
+                            
+                            <textarea type="text" name="job_assi1" placeholder="Enter your student" rows="5" cols="55"></textarea>
+            
+                        </div>
+                        <script>
+                            function showDiv(prefix,chooser)
+                            {
+                                for(var i=0;i<chooser.options.length;i++)
+                                {
+                                    var div = document.getElementById(prefix+chooser.options[i].value);
+                                    div.style.display = 'none';
+                                }
+
+                                var selectedOption = (chooser.options[chooser.selectedIndex].value);
+
+                                if(selectedOption == "1")
+                                {
+
+                                    displayDiv(prefix,"1",);
+                                }
+                                if(selectedOption == "2")
+                                {
+                                    displayDiv(prefix,"2");
+                                }
+                                if(selectedOption == "3")
+                                {
+                                    displayDiv(prefix,"3");
+                                }
+                                if(selectedOption == "4")
+                                {
+                                    displayDiv(prefix,"4");
+                                }
+                                if(selectedOption == "5")
+                                {
+                                    displayDiv(prefix,"5");
+                                }
+                                if(selectedOption == "6")
+                                {
+                                    displayDiv(prefix,"6");
+                                }
+                               
+                            }
+
+                            function displayDiv(prefix,suffix)
+                            {
+                                var div = document.getElementById(prefix+suffix);
+                                div.style.display = 'block';
+                            }
+                        </script>
+                    </div>
+                    
+                    <div class="field padding-bottom--24">
+                        <input type="submit" name="submit" value="Continue">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
+<!-- partial -->
+
+
